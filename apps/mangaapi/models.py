@@ -14,7 +14,14 @@ class Manga(models.Model):
     volume = models.IntegerField() #! verificar validations 
     capitulo = models.IntegerField() #! verificar validations
     demografia = models.CharField(choices=DEMO_CHOICES, max_length=7)
-
+    
 
     class meta: 
         ordering = ['cadastrado']
+
+class Mangaka(models.Model):
+    nome = models.CharField(max_length=255)
+    sobrenome = models.CharField(max_length=255)
+
+    class meta: 
+        ordering = ['sobrenome']
