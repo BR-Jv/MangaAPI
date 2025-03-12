@@ -10,11 +10,12 @@ DEMO_CHOICES = [
 
 class Manga(models.Model):
     cadastrado = models.DateTimeField(auto_now_add=True)
-    nome = models.CharField(max_length=255) 
+    nome = models.CharField(max_length=255)  
     volume = models.IntegerField() #! verificar validations 
     capitulo = models.IntegerField() #! verificar validations
     demografia = models.CharField(choices=DEMO_CHOICES, max_length=7)
     
+    #TODO - Mudar o nome dos campos [nome->titulo, volume -> volumes, capitulo -> capitulos]
 
     class meta: 
         ordering = ['cadastrado']
