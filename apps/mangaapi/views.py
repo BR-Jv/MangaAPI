@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from .models import Manga
+from .serializers import MangasSerializer
 
 class MangasviewSet(viewsets.ModelViewSet):
     """
@@ -7,7 +8,7 @@ class MangasviewSet(viewsets.ModelViewSet):
     """
 
     queryset = Manga.objects.all().order_by('cadastrado')
-    
+    serializer_class = MangasSerializer
     
     
     
